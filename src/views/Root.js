@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react'
 import { Router } from 'react-router'
 import { Provider } from 'react-redux'
+import { MuiThemeProvider } from 'material-ui/styles'
 import '../assets/main.scss'
 
 class Root extends React.Component {
@@ -39,13 +40,15 @@ class Root extends React.Component {
     if (this.state.loaded) {
       return (
         <div>
-          <Provider store={this.props.store}>
-            <div>
+          <MuiThemeProvider>
+            <Provider store={this.props.store}>
               <div>
-                {this.content}
+                <div>
+                  {this.content}
+                </div>
               </div>
-            </div>
-          </Provider>
+            </Provider>
+          </MuiThemeProvider>
         </div>
       )
     } else {

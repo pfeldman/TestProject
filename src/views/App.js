@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import HelloWorld from '../components/HelloWorld'
 import { changeLanguage } from '../actions/Language'
+import Button from 'material-ui/Button'
 
 class App extends React.Component {
   changeLanguage = () => {
@@ -20,7 +21,8 @@ class App extends React.Component {
     return (
       <div>
         <HelloWorld language={language} />
-        <button onClick={this.changeLanguage}>Change language</button>
+
+        <Button raised onClick={this.changeLanguage}>Change language</Button>
       </div>
     )
   }
