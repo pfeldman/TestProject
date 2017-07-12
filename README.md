@@ -28,7 +28,7 @@ $ npm run dev                   # Compile and launch the App
 Usage
 -----
 
-* `npm run dev` - serve the app at: `localhost:9001` (Hot node refresh enabled).
+* `npm run dev` - serve the app at: `localhost:9000` (Hot node refresh enabled).
 * `npm run lint`- Lint all `.js` files.
 * `npm run lint:fix` - Lint and fix all `.js` files. [Read more on this](http://eslint.org/docs/user-guide/command-line-interface.html#fix).
 
