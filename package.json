@@ -1,7 +1,7 @@
 {
-  "name": "PAP",
+  "name": "testSite",
   "version": "2.0.0",
-  "description": "Pasito a Paso",
+  "description": "Test Site",
   "main": "index.js",
   "engines": {
     "node": ">=4.2.0",
@@ -20,8 +20,8 @@
       "command": "nodemon -r dotenv/config bin/server",
       "env": {
         "DEVELOPMODE": true,
-        "BE_HOST": "api.dev.lendsnap.com",
-        "BE_PORT": "8000",
+        "BE_HOST": "",
+        "BE_PORT": "",
         "URL": "/",
         "RELATIVE_PATH": false,
         "NODE_ENV": "local"
@@ -30,7 +30,7 @@
     "build": {
       "command": "npm run clean && npm run compile",
       "env": {
-        "BE_HOST": "api.test.lendsnap.com",
+        "BE_HOST": "",
         "URL": "/",
         "BE_HTTPS": true,
         "RELATIVE_PATH": false,
@@ -40,9 +40,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lendsnap/New-UI-React-Concept.git"
+    "url": "git+https://github.com/pfeldman/TestProject"
   },
-  "author": "Lendsnap Team",
+  "author": "pablo.feldman@globant.com",
   "dependencies": {
     "better-npm-run": "0.0.5",
     "debug": "^2.2.0",
@@ -51,11 +51,7 @@
     "es6-promise": "^3.1.2",
     "es6-shim": "^0.35.0",
     "fs": "0.0.2",
-    "gsap": "^1.19.1",
     "history": "^2.0.0-rc2",
-    "install": "^0.8.4",
-    "koa": "^2.0.0-alpha.3",
-    "npm": "^4.0.5",
     "react": "^0.14.8",
     "react-dom": "^0.14.0",
     "react-redux": "^4.0.0",
@@ -74,12 +70,10 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-preset-react-hmre": "^1.0.0",
-    "babel-preset-stage-0": "^6.3.13",
+    "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.3.13",
     "babel-runtime": "^6.3.19",
-    "chai": "^3.4.1",
-    "chai-as-promised": "^5.1.0",
-    "chai-enzyme": "^0.3.0",
+    "chai": "^1.9.2",
     "cheerio": "^0.19.0",
     "clean": "^4.0.2",
     "concurrently": "^2.0.0",
@@ -106,6 +100,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.23",
     "karma-webpack": "^1.7.0",
+    "koa": "^2.3.0",
     "mocha": "^2.2.5",
     "node-neat": "^1.7.2",
     "node-sass": "^3.3.3",
@@ -118,12 +113,10 @@
     "redux-devtools-dock-monitor": "^1.1.0",
     "redux-devtools-log-monitor": "^1.0.5",
     "rimraf": "^2.5.4",
-    "s3-deploy": "^0.6.1",
     "sass-loader": "^4.0.2",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "style-loader": "^0.13.1",
-    "underscore": "^1.8.3",
     "url-loader": "^0.5.7",
     "webpack": "1.12.9",
     "webpack-dev-middleware": "^1.4.0",

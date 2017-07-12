@@ -16,7 +16,7 @@ class App extends React.Component {
 
   render = () => {
     const { language } = this.props
-    
+
     return (
       <div>
         <HelloWorld language={language} />
@@ -27,7 +27,8 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  dispatch: PropTypes.func
+  dispatch: PropTypes.func,
+  language: PropTypes.string
 }
 
 function mapStateToProps (state) {
