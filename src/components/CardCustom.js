@@ -25,7 +25,7 @@ class CardCustom extends React.Component {
     const { expanded } = this.state
 
     return (
-      <Card className={expanded ? 'expanded' : 'collapsed'}>
+      <Card className={expanded || showIcon ? 'expanded' : 'collapsed'}>
         <CardContent>
           <header className='cardHeader'>
             <h2 className='pull-left'>{showIcon ? icon : title}</h2>
@@ -40,7 +40,7 @@ class CardCustom extends React.Component {
             transitionDuration='100'
             in
             unmountOnExit
-            className={(expanded ? 'cardExpanded' : 'cardCollapsed')}
+            className={(expanded || showIcon ? 'cardExpanded' : 'cardCollapsed')}
           >
             {children}
           </Collapse>
