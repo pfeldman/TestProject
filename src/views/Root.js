@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react'
 import { Router } from 'react-router'
 import { Provider } from 'react-redux'
 import { MuiThemeProvider } from 'material-ui/styles'
-import '../assets/main.scss'
+import '../assets/stylesheets/main.scss'
 
 class Root extends React.Component {
   static propTypes = {

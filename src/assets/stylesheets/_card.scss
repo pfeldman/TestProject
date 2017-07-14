@@ -1,0 +1,45 @@
+div[class*="MuiCard-root"] {
+  margin-bottom: 25px;
+
+  &.expanded {
+    padding-bottom: 24px;
+  }
+
+  &.collapsed {
+    .collapseButton {
+      transform: rotate(180deg);
+    }
+  }
+
+  h2 {
+    font-size: 18px;
+    margin-top: 0;
+    max-width: 70%;
+    margin-bottom: 0;
+  }
+
+  .collapseButton {
+    transition: transform 0.3s ease;
+    margin-left: auto;
+  }
+
+  div[class*="MuiCardContent"] {
+    overflow: hidden;
+    padding-bottom: 0 !important;
+    padding-top: 5px !important;
+  }
+
+  div [class*="MuiCollapse-container"] {
+    float: none;
+    clear: both;
+    border-top: 1px solid #CCC;
+    padding-top: 14px;
+  }
+
+  .cardHeader {
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+  }
+}

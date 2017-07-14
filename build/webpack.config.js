@@ -136,9 +136,28 @@ webpackConfig.module.loaders.push({
 })
 
 webpackConfig.module.loaders.push({
-  test: /\.(eot|svg|ttf|woff|woff2)$/,
-  include: /src/,
-  loader: 'file?name=[name].[ext]'
+  test: /\.woff$/,
+  loader: "url-loader?limit=10000&minetype=application/font-woff"
+})
+
+webpackConfig.module.loaders.push({
+  test: /\.woff2$/,
+  loader: "url-loader?limit=10000&minetype=application/font-woff2"
+})
+
+webpackConfig.module.loaders.push({
+  test: /\.ttf$/,
+  loader: "file-loader"
+})
+
+webpackConfig.module.loaders.push({
+  test: /\.eot$/,
+  loader: "file-loader"
+})
+
+webpackConfig.module.loaders.push({
+  test: /\.svg$/,
+  loader: "file-loader"
 })
 
 webpackConfig.module.loaders.push({
@@ -162,9 +181,9 @@ webpackConfig.module.loaders.push({
   ]
 })
 
-webpackConfig.module.loaders.push({ 
-     test: /\.(png|jpg)$/, 
-     loader: 'file-loader' 
+webpackConfig.module.loaders.push({
+     test: /\.(png|jpg)$/,
+     loader: 'file-loader'
 })
 
 // Don't treat global SCSS as modules
@@ -241,5 +260,6 @@ if (!__DEV__) {
     })
   )
 }
+
 
 export default webpackConfig

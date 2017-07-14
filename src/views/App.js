@@ -1,42 +1,23 @@
-import React, { PropTypes } from 'react'
-import { connect } from 'react-redux'
-
-import HelloWorld from '../components/HelloWorld'
-import { changeLanguage } from '../actions/Language'
-import Button from 'material-ui/Button'
+import React from 'react'
+import Header from '../components/Header'
+import Sidebar from '../components/Sidebar'
+import Poll from '../components/Poll'
 
 class App extends React.Component {
-  changeLanguage = () => {
-    const { dispatch, language } = this.props
-    let newLanguage = 'es'
-    if (language === 'es') {
-      newLanguage = 'en'
-    }
-    dispatch(changeLanguage(newLanguage))
-  }
-
   render = () => {
-    const { language } = this.props
-
     return (
       <div>
-        <HelloWorld language={language} />
-
-        <Button raised onClick={this.changeLanguage}>Change language</Button>
+        <Header />
+        <div className='container-fluid'>
+          <div className='col-md-12'>
+            <h1 className='col-md-3'>Client Survey</h1>
+          </div>
+          <Sidebar />
+          <Poll />
+        </div>
       </div>
     )
   }
 }
 
-App.propTypes = {
-  dispatch: PropTypes.func,
-  language: PropTypes.string
-}
-
-function mapStateToProps (state) {
-  return {
-    language: state.Language.language
-  }
-}
-
-export default connect(mapStateToProps)(App)
+export default App
