@@ -21,19 +21,27 @@ class CardCustom extends React.Component {
   }
 
   render = () => {
-    const { title, children } = this.props
+    const { title, children, showIcon, icon } = this.props
     const { expanded } = this.state
 
     return (
       <Card className={expanded ? 'expanded' : 'collapsed'}>
         <CardContent>
           <header className='cardHeader'>
-            <h2 className='pull-left'>{title}</h2>
-            <IconButton className='pull-right collapseButton' onClick={this.toggleExpanded}>
+            <h2 className='pull-left'>{showIcon ? icon : title}</h2>
+            <IconButton
+              className={'pull-right collapseButton' + (showIcon ? ' hidden' : '')}
+              onClick={this.toggleExpanded}
+            >
               <ExpandMoreIcon />
             </IconButton>
           </header>
-          <Collapse transitionDuration='100' unmountOnExit in={expanded}>
+          <Collapse
+            transitionDuration='100'
+            in
+            unmountOnExit
+            className={(expanded ? 'cardExpanded' : 'cardCollapsed')}
+          >
             {children}
           </Collapse>
         </CardContent>
@@ -44,7 +52,9 @@ class CardCustom extends React.Component {
 
 CardCustom.propTypes = {
   title: PropTypes.string,
-  children: PropTypes.object
+  children: PropTypes.object,
+  icon: PropTypes.object,
+  showIcon: PropTypes.bool
 }
 
 export default CardCustom

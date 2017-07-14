@@ -1,0 +1,29 @@
+.sidebar {
+  transition: all 0.3s ease-in-out;
+
+  &.smallSidebar {
+    div[class*="MuiCard-root"] {
+      h2 {
+        width: 100%;
+        max-width: 100%;
+
+        svg {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .sidebarCollapsed {
+    transform: rotate(180deg);
+  }
+
+  .toggleSidebar {
+    transition: transform 0.3s ease-in-out;
+  }
+
+
+  .sidebarCollapsed.toggleSidebar {
+    margin-left: -20px;
+  }
+}

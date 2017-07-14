@@ -2,6 +2,7 @@
 @import '_helpers';
 @import '_card';
 @import '_variables';
+@import '_sidebar';
 
 body {
   margin: 0;
@@ -9,7 +10,8 @@ body {
   background-color: $background;
 }
 
-section {
+section,
+aside {
   padding-top: 10px;
   padding-bottom: 10px;
 }

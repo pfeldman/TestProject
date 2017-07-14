@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import Language from './Language'
+import Sidebar from './Sidebar'
 
 export default combineReducers({
-  Language
+  Sidebar
 })
