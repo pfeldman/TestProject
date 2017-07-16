@@ -27,9 +27,8 @@ class Header extends React.Component {
   }
 
   openSidebar = () => {
-    const { dispatch } = this.props
-
-    dispatch(sidebarOpen(true))
+    const { dispatch, opened } = this.props
+    dispatch(sidebarOpen(!opened))
   }
 
   render = () => {
@@ -61,7 +60,14 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  dispatch: PropTypes.func
+  dispatch: PropTypes.func,
+  opened: PropTypes.bool
 }
 
-export default connect()(Header)
+function mapStateToProps (state) {
+  return {
+    opened: state.Sidebar.opened
+  }
+}
+
+export default connect(mapStateToProps)(Header)

@@ -27,13 +27,12 @@ class Sidebar extends React.Component {
     this.state = {}
   }
 
-  handleClickOutside = () => {
+  handleClickOutside = (e) => {
     const { opened, dispatch } = this.props
 
-    if (opened) {
+    if (opened && e.target.tagName.toUpperCase() !== 'SVG') {
       dispatch(sidebarOpen(false))
     }
-    console.log('onClickOutside() method called')
   }
 
   toggleSidebar = () => {
