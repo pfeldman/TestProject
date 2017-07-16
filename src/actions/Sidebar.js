@@ -7,9 +7,10 @@ export function expandSidebar (status) {
   }
 }
 
-export function sidebarOpen (status) {
+export function sidebarOpen (status, height) {
   return {
     type: types.SIDEBAR_OPEN,
-    status
+    status,
+    height
   }
 }

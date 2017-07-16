@@ -1,5 +1,6 @@
 /* Framework */
 import React from 'react'
+import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
@@ -21,8 +22,9 @@ class Header extends React.Component {
   componentDidMount = () => {
     const { dispatch } = this.props
 
+    let height = ReactDOM.findDOMNode(this.refs.header).clientHeight
     if (isMobile()) {
-      dispatch(sidebarOpen(false))
+      dispatch(sidebarOpen(false, height))
     }
   }
 
@@ -44,7 +46,7 @@ class Header extends React.Component {
       )
     }
     return (
-      <header>
+      <header ref='header'>
         <AppBar position='static'>
           <Toolbar>
             { menu }

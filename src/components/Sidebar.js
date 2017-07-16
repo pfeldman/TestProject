@@ -29,7 +29,6 @@ class Sidebar extends React.Component {
 
   handleClickOutside = (e) => {
     const { opened, dispatch } = this.props
-
     if (opened && e.target.tagName.toUpperCase() !== 'SVG') {
       dispatch(sidebarOpen(false))
     }
@@ -50,7 +49,7 @@ class Sidebar extends React.Component {
   }
 
   render = () => {
-    const { expanded, opened } = this.props
+    const { expanded, opened, height } = this.props
     const { width } = this.state
     let style = {}
     if (opened && width) {
@@ -58,6 +57,8 @@ class Sidebar extends React.Component {
     } else if (width) {
       style.left = (width * -1) - 50
     }
+
+    style.top = height
     return (
       <aside
         className={(expanded ? 'col-md-3' : 'col-md-1 px-no smallSidebar') + ' sidebar'}
@@ -131,13 +132,15 @@ class Sidebar extends React.Component {
 Sidebar.propTypes = {
   expanded: PropTypes.bool,
   opened: PropTypes.bool,
-  dispatch: PropTypes.func
+  dispatch: PropTypes.func,
+  height: PropTypes.number
 }
 
 function mapStateToProps (state) {
   return {
     expanded: state.Sidebar.expanded,
-    opened: state.Sidebar.opened
+    opened: state.Sidebar.opened,
+    height: state.Sidebar.height
   }
 }
 

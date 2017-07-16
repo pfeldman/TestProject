@@ -13,6 +13,10 @@ function Sidebar (state = {}, action) {
         opened: action.status
       })
 
+      if (action.height) {
+        sidebarOpen.height = action.height
+      }
+
       return sidebarOpen
     default:
       state = Object.assign({}, state, {
