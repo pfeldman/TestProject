@@ -45,8 +45,6 @@ class CardCustom extends React.Component {
     const { title, children, showIcon, icon } = this.props
     const { expanded, height } = this.state
 
-    console.log(height)
-
     return (
       <Card
         className={expanded || showIcon ? 'expanded' : 'collapsed'}

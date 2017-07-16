@@ -8,9 +8,16 @@ function Sidebar (state = {}, action) {
       })
 
       return sidebar
+    case types.SIDEBAR_OPEN:
+      let sidebarOpen = Object.assign({}, state, {
+        opened: action.status
+      })
+
+      return sidebarOpen
     default:
       state = Object.assign({}, state, {
-        expanded: true
+        expanded: true,
+        opened: true
       })
 
       return state

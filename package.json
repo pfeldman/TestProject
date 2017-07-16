@@ -57,6 +57,7 @@
     "material-ui-icons": "^1.0.0-alpha.19",
     "prop-types": "^15.5.10",
     "react": "^15.3.0",
+    "react-click-outside": "^2.3.1",
     "react-dom": "^15.3.0",
     "react-redux": "^4.0.0",
     "react-router": "^2.0.0-rc5",

@@ -10,7 +10,7 @@ class App extends React.Component {
         <Header />
         <div className='container-fluid'>
           <div className='col-md-12'>
-            <h1 className='col-md-3'>Client Survey</h1>
+            <h1 className='col-md-4'>Client Survey</h1>
           </div>
           <Sidebar />
           <Poll />

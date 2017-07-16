@@ -1,27 +1,70 @@
+/* Framework */
 import React from 'react'
+import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
+/* Components */
 import CardCustom from '../components/CardCustom'
+
+/* Material UI */
 import KeyboardArrowLeftIcon from 'material-ui-icons/KeyboardArrowLeft'
 import IconButton from 'material-ui/IconButton'
-import { expandSidebar } from '../actions/Sidebar'
 import AccountBoxIcon from 'material-ui-icons/AccountBox'
 import PeopleIcon from 'material-ui-icons/People'
 import LiveHelpIcon from 'material-ui-icons/LiveHelp'
 
+/* Actions */
+import { expandSidebar, sidebarOpen } from '../actions/Sidebar'
+
+/* Third Party */
+import enhanceWithClickOutside from 'react-click-outside'
+
 class Sidebar extends React.Component {
+  constructor () {
+    super()
+
+    this.state = {}
+  }
+
+  handleClickOutside = () => {
+    const { opened, dispatch } = this.props
+
+    if (opened) {
+      dispatch(sidebarOpen(false))
+    }
+    console.log('onClickOutside() method called')
+  }
+
   toggleSidebar = () => {
     const { expanded, dispatch } = this.props
 
     dispatch(expandSidebar(!expanded))
   }
 
-  render = () => {
-    const { expanded } = this.props
+  componentDidMount = () => {
+    const sidebarWidth = ReactDOM.findDOMNode(this.refs.sidebar).clientWidth
 
+    this.setState({
+      width: sidebarWidth
+    })
+  }
+
+  render = () => {
+    const { expanded, opened } = this.props
+    const { width } = this.state
+    let style = {}
+    if (opened && width) {
+      style.left = 0
+    } else if (width) {
+      style.left = (width * -1) - 50
+    }
     return (
-      <aside className={(expanded ? 'col-md-3' : 'col-md-1 px-no smallSidebar') + ' sidebar'}>
+      <aside
+        className={(expanded ? 'col-md-3' : 'col-md-1 px-no smallSidebar') + ' sidebar'}
+        ref='sidebar'
+        style={style}
+      >
         <div className={(expanded ? 'col-md-10' : 'col-md-7') + ' px-no'}>
           <CardCustom
             title='Client Information'
@@ -88,13 +131,15 @@ class Sidebar extends React.Component {
 
 Sidebar.propTypes = {
   expanded: PropTypes.bool,
+  opened: PropTypes.bool,
   dispatch: PropTypes.func
 }
 
 function mapStateToProps (state) {
   return {
-    expanded: state.Sidebar.expanded
+    expanded: state.Sidebar.expanded,
+    opened: state.Sidebar.opened
   }
 }
 
-export default connect(mapStateToProps)(Sidebar)
+export default connect(mapStateToProps)(enhanceWithClickOutside(Sidebar))

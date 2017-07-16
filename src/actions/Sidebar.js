@@ -6,3 +6,10 @@ export function expandSidebar (status) {
     status
   }
 }
+
+export function sidebarOpen (status) {
+  return {
+    type: types.SIDEBAR_OPEN,
+    status
+  }
+}
