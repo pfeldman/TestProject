@@ -46,7 +46,7 @@ class Header extends React.Component {
       )
     }
     return (
-      <header ref='header'>
+      <header id='header' ref='header'>
         <AppBar position='static'>
           <Toolbar>
             { menu }

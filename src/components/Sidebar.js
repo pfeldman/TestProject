@@ -29,7 +29,7 @@ class Sidebar extends React.Component {
 
   handleClickOutside = (e) => {
     const { opened, dispatch } = this.props
-    if (opened && e.target.tagName.toUpperCase() !== 'SVG') {
+    if (opened && !document.getElementById('header').contains(e.target)) {
       dispatch(sidebarOpen(false))
     }
   }
