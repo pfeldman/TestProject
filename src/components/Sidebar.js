@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import CardCustom from '../components/CardCustom'
@@ -21,7 +22,7 @@ class Sidebar extends React.Component {
 
     return (
       <aside className={(expanded ? 'col-md-3' : 'col-md-1 px-no smallSidebar') + ' sidebar'}>
-        <div className={(expanded ? 'col-md-10' : 'col-md-8') + ' px-no'}>
+        <div className={(expanded ? 'col-md-10' : 'col-md-7') + ' px-no'}>
           <CardCustom
             title='Client Information'
             icon={<AccountBoxIcon />}
@@ -68,7 +69,7 @@ class Sidebar extends React.Component {
             </fieldset>
           </CardCustom>
         </div>
-        <div className='col-md-2'>
+        <div className='col-md-1'>
           <IconButton
             className={(expanded
                 ? 'sidebarExpanded'

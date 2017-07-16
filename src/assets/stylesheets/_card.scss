@@ -34,14 +34,14 @@ div[class*="MuiCard-root"] {
     clear: both;
     border-top: 1px solid #CCC;
     padding-top: 14px;
-    transition: max-height 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     &.cardCollapsed {
       padding-bottom: 0;
       padding-top: 0;
       border-top: 0 none;
 
-      max-height: 0px;
+      height: 0px !important;
     }
   }
 
