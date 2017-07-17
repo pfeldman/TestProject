@@ -1,0 +1,135 @@
+{
+  data: [
+    {
+      columns: [
+        'Dedicated EM',
+        'Crossover EM'
+      ],
+      rows: [
+        {
+          title: 'EM Assets ($mn)',
+          data: [
+            {
+              value: 1
+            },
+            {
+              value: 0
+            }
+          ]
+        },
+        {
+          title: 'Cash Holdings %',
+          data: [
+            {
+              value: 'N/A'
+            }
+          ]
+        },
+        {
+          title: 'Main Xover Benchmark',
+          data: [
+            {
+              value: 'N/A'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      rows: [
+        {
+          data: [
+            {
+              title: 'Sovn External %',
+              value: 'N/A'
+            },
+            {
+              title: 'Corporate %',
+              value: 'N/A'
+            }
+          ]
+        },
+        {
+          data: [
+            {
+              title: 'Main Sov External Benchmark',
+              value: 'N/A',
+              options: [
+                'N/A',
+                'Option 1'
+              ]
+            },
+            {
+              title: 'Main Corporate Benchmark',
+              value: 'N/A',
+              options: [
+                'N/A',
+                'Option 1'
+              ]
+            }
+          ]
+        },
+        {
+          data: [
+            {
+              title: 'Sovn Ext Amt Benched ($msn)',
+              value: 'N/A'
+            },
+            {
+              title: 'Corporate Amt Benched ($msn)',
+              value: 'N/A'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      rows: [
+        {
+          data: [
+            {
+              title: 'Local Markets %',
+              value: 'N/A'
+            },
+            {
+              title: 'FX Hedging of Local Bonds %',
+              value: 'N/A'
+            }
+          ]
+        },
+        {
+          data: [
+            {
+              title: 'Main Local Bond Benchmark',
+              value: 'N/A',
+              options: [
+                'N/A',
+                'Option  1'
+              ]
+            },
+            {
+              title: 'Main Local FX Benchmark',
+              value: 'N/A',
+              options: [
+                'N/A',
+                'Option 1'
+              ]
+            }
+          ]
+        },
+        {
+          data: [
+            {
+              title: 'Local Bond Amt Benched ($msn)',
+              value: 'N/A'
+            },
+            {
+              title: 'Local FX Amt Benched ($msn)',
+              value: 'N/A'
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
