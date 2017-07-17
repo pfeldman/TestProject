@@ -10,9 +10,18 @@
   margin-top: 10px;
 }
 
+.mb-lg {
+  margin-bottom: 15px !important;
+}
+
+.mx-no {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
 .px-no {
-  padding-left: 0;
-  padding-right: 0
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .py-no {
@@ -26,4 +35,16 @@
 
 .hidden {
   display: none;
+}
+
+.db {
+  display: block !important;
+}
+
+.ta-c {
+  text-align: center;
+}
+
+.of-h {
+  overflow: hidden;
 }

@@ -6,19 +6,29 @@ import { connect } from 'react-redux'
 
 /* Components */
 import CardCustom from '../components/CardCustom'
+import CardElement from '../components/CardElement'
 
 /* Material UI */
 import KeyboardArrowLeftIcon from 'material-ui-icons/KeyboardArrowLeft'
 import IconButton from 'material-ui/IconButton'
+
+/* Icons */
 import AccountBoxIcon from 'material-ui-icons/AccountBox'
 import PeopleIcon from 'material-ui-icons/People'
 import LiveHelpIcon from 'material-ui-icons/LiveHelp'
+import PlaceIcon from 'material-ui-icons/Place'
+import EmailIcon from 'material-ui-icons/Email'
+import EventAvailableIcon from 'material-ui-icons/EventAvailable'
+import PhoneIcon from 'material-ui-icons/Phone'
 
 /* Actions */
 import { expandSidebar, sidebarOpen } from '../actions/Sidebar'
 
 /* Third Party */
 import enhanceWithClickOutside from 'react-click-outside'
+
+/* Utils */
+import { isMobile } from '../Utils'
 
 class Sidebar extends React.Component {
   constructor () {
@@ -29,7 +39,7 @@ class Sidebar extends React.Component {
 
   handleClickOutside = (e) => {
     const { opened, dispatch } = this.props
-    if (opened && !document.getElementById('header').contains(e.target)) {
+    if (opened && !document.getElementById('header').contains(e.target) && isMobile()) {
       dispatch(sidebarOpen(false))
     }
   }
@@ -72,11 +82,24 @@ class Sidebar extends React.Component {
             showIcon={!expanded}
           >
             <fieldset>
-              <legend>Company Name:</legend>
-              <span>YYYY Inv Mgmt</span>
-
-              <legend className='mt-md'>Survey Date:</legend>
-              <span>25-FEB-2017</span>
+              <CardElement
+                icon={<PlaceIcon />}
+                showIcon={!expanded}
+              >
+                <div>
+                	<legend>Company Name:</legend>
+                  <span>YYYY Inv Mgmt</span>
+                </div>
+              </CardElement>
+              <CardElement
+                icon={<EventAvailableIcon />}
+                showIcon={!expanded}
+              >
+                <div>
+                  <legend className='mt-md'>Survey Date:</legend>
+                  <span>25-FEB-2017</span>
+                </div>
+              </CardElement>
             </fieldset>
           </CardCustom>
           <CardCustom
@@ -84,11 +107,15 @@ class Sidebar extends React.Component {
             icon={<PeopleIcon />}
             showIcon={!expanded}
           >
-            <ul>
-              <li>John Doe</li>
-              <li>John Doe</li>
-              <li>John Doe</li>
-            </ul>
+            <CardElement
+              showIcon={!expanded}
+            >
+              <ul>
+                <li>John Doe</li>
+                <li>John Doe</li>
+                <li>John Doe</li>
+              </ul>
+            </CardElement>
           </CardCustom>
           <CardCustom
             title='Sales Contact'
@@ -96,10 +123,22 @@ class Sidebar extends React.Component {
             showIcon={!expanded}
           >
             <fieldset>
-              <legend>
-                Name
-              </legend>
-              <span>Nguyen, Trang</span>
+              <CardElement
+                icon={(
+                  <div>
+                    <EmailIcon />
+                    <PhoneIcon />
+                  </div>
+                )}
+                showIcon={!expanded}
+              >
+                <div>
+                  <legend>
+                    Name
+                  </legend>
+                  <span>Nguyen, Trang</span>
+                </div>
+              </CardElement>
             </fieldset>
           </CardCustom>
           <CardCustom
@@ -108,7 +147,12 @@ class Sidebar extends React.Component {
             showIcon={!expanded}
           >
             <fieldset>
-              <span>Contact Us</span>
+              <CardElement
+                icon={<EmailIcon />}
+                showIcon={!expanded}
+              >
+                <span>Contact Us</span>
+              </CardElement>
             </fieldset>
           </CardCustom>
         </div>
